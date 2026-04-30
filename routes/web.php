@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\VisitorController;
 
 Route::get('/', function () {
@@ -18,3 +19,11 @@ Route::get('/visitors/{visitor}', [VisitorController::class, 'show'])->name('vis
 Route::get('/visitors/{visitor}/edit', [VisitorController::class, 'edit'])->name('visitors.edit');
 Route::post('/visitors/{visitor}/edit', [VisitorController::class, 'update'])->name('visitors.update');
 Route::get('/visitors/{visitor}/delete', [VisitorController::class, 'delete'])->name('visitors.delete');
+
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
+Route::post('/blogs/create', [BlogController::class, 'store'])->name('blogs.store');
+Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
+Route::get('/blogs/{blog}/edit', [BlogController::class, 'edit'])->name('blogs.edit');
+Route::post('/blogs/{blog}/edit', [BlogController::class, 'update'])->name('blogs.update');
+Route::get('/blogs/{blog}/delete', [BlogController::class, 'delete'])->name('blogs.delete');

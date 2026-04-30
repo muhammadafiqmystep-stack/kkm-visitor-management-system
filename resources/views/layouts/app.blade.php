@@ -42,6 +42,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('visitors.create') }}">Visitor Create</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('blogs.index') }}">Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('blogs.create') }}">Blog Create</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
