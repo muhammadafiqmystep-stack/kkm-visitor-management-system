@@ -45,7 +45,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users.index') }}">Users</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item d-none">
                             <a class="nav-link" href="{{ route('users.create') }}">User Create</a>
                         </li>
                         <li class="nav-item">
