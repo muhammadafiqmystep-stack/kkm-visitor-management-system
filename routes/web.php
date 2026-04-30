@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VisitorController;
 
 Route::get('/', function () {
@@ -19,6 +20,14 @@ Route::get('/visitors/{visitor}', [VisitorController::class, 'show'])->name('vis
 Route::get('/visitors/{visitor}/edit', [VisitorController::class, 'edit'])->name('visitors.edit');
 Route::post('/visitors/{visitor}/edit', [VisitorController::class, 'update'])->name('visitors.update');
 Route::get('/visitors/{visitor}/delete', [VisitorController::class, 'delete'])->name('visitors.delete');
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+Route::post('/users/create', [UserController::class, 'store'])->name('users.store');
+Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
+Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::post('/users/{user}/edit', [UserController::class, 'update'])->name('users.update');
+Route::get('/users/{user}/delete', [UserController::class, 'delete'])->name('users.delete');
 
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
