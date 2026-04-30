@@ -40,4 +40,30 @@ class VisitorController extends Controller
         // return to views - resources/views/visitors/show.blade.php
         return view('visitors.show', compact('visitor'));
     }
+
+    public function edit(\App\Models\Visitor $visitor)
+    {
+        // return to views - resources/views/visitors/edit.blade.php
+        return view('visitors.edit', compact('visitor'));
+    }
+
+    public function update(\App\Models\Visitor $visitor, Request $request)
+    {
+        //update data to table 'visitors' using Model Visitor Method POPO
+        $visitor->name = $request->name;
+        $visitor->phone = $request->phone;
+        $visitor->email = $request->email;
+        $visitor->save();
+
+        // redirect to visitors.index
+        return redirect()->route('visitors.index');
+    }
+
+    public function delete(\App\Models\Visitor $visitor)
+    {
+        //delete visitor
+        $visitor->delete();
+        
+        return redirect()->route('visitors.index');
+    }
 }

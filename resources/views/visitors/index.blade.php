@@ -27,6 +27,12 @@
                                     <td>{{ $visitor->created_at->diffForHumans() }}</td>
                                     <td>
                                         <a href="{{ route('visitors.show', $visitor->id) }}" class="btn btn-primary">Show</a>
+                                        <a href="{{ route('visitors.edit', $visitor->id) }}" class="btn btn-warning">Edit</a>
+                                        <a 
+                                            onclick="return confirm('are you sure you want to delete this visitor?')"
+                                            href="{{ route('visitors.delete', $visitor->id) }}" class="btn btn-danger">
+                                            Delete
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
