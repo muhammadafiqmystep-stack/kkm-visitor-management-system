@@ -461,6 +461,7 @@
                         <a href="#features">Features</a>
                         <a href="#quick-start">Quick Start</a>
                         <a href="#complaints">Complaints</a>
+                        <a href="{{ route('home') }}">Home</a>
                     </nav>
                 </div>
             </header>
