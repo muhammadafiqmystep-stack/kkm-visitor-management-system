@@ -31,6 +31,12 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('welcome') }}">Welcome</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('visitors.index') }}">Visitors</a>
                         </li>
                         <li class="nav-item">
