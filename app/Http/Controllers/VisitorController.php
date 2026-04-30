@@ -14,4 +14,10 @@ class VisitorController extends Controller
         //return to views - resources/views/visitors/index.blade.php
         return view('visitors.index', compact('visitors'));
     }
+
+    public function create() 
+    {
+        // return to views - resources/views/visitors/create.blade.php
+        return view('visitors.create');
+    }
 }
