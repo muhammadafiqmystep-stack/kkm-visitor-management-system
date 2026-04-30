@@ -14,3 +14,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/visitors', [VisitorController::class, 'index'])->name('visitors.index');
 Route::get('/visitors/create', [VisitorController::class, 'create'])->name('visitors.create');
 Route::post('/visitors/create', [VisitorController::class, 'store'])->name('visitors.store');
+Route::get('/visitors/{visitor}', [VisitorController::class, 'show'])->name('visitors.show');

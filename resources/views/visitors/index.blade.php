@@ -15,6 +15,7 @@
                                 <th>Phone</th>
                                 <th>Email</th>
                                 <th>Created At</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -24,6 +25,9 @@
                                     <td>{{ $visitor->phone }}</td>
                                     <td>{{ $visitor->email }}</td>
                                     <td>{{ $visitor->created_at->diffForHumans() }}</td>
+                                    <td>
+                                        <a href="{{ route('visitors.show', $visitor->id) }}" class="btn btn-primary">Show</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
