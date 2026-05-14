@@ -65,6 +65,7 @@ class VisitorController extends Controller
         //delete visitor
         $visitor->delete();
         
+        auth()->user()->notify(new \App\Notifications\VisitorDeletedNotification());
         return redirect()->route('visitors.index');
     }
 }
