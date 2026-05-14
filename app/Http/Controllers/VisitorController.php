@@ -30,6 +30,7 @@ class VisitorController extends Controller
         $visitor->email = $request->email;
         $visitor->save();
 
+        auth()->user()->notify(new \App\Notifications\VisitorCreatedNotification());
         //redirect to visitors.index
         return redirect()->route('visitors.index');
         
