@@ -29,7 +29,7 @@
                                         <a href="{{ route('visitors.show', $visitor->id) }}" class="btn btn-primary">Show</a>
                                         <a href="{{ route('visitors.edit', $visitor->id) }}" class="btn btn-warning">Edit</a>
                                         <a 
-                                            onclick="return confirm('are you sure you want to delete this visitor?')"
+                                            onclick="return confirm('Are you sure you want to delete this visitor?')"
                                             href="{{ route('visitors.delete', $visitor->id) }}" class="btn btn-danger">
                                             Delete
                                         </a>
@@ -66,6 +66,11 @@
                                     <td>{{ $deletedVisitor->deleted_at->diffForHumans() }}</td>
                                     <td>
                                         <a href="{{ route('visitors.restore', $deletedVisitor->id) }}" class="btn btn-success">Restore</a>
+                                        <a 
+                                            onclick="return confirm('Are you sure you want to force delete this visitor?')"
+                                            href="{{ route('visitors.force-delete', $deletedVisitor->id) }}" class="btn btn-dark">
+                                            Force Delete
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
