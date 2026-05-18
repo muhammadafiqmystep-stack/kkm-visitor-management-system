@@ -31,6 +31,7 @@ Route::get('/visitors/{visitor}', [VisitorController::class, 'show'])->name('vis
 Route::get('/visitors/{visitor}/edit', [VisitorController::class, 'edit'])->name('visitors.edit');
 Route::post('/visitors/{visitor}/edit', [VisitorController::class, 'update'])->name('visitors.update');
 Route::get('/visitors/{visitor}/delete', [VisitorController::class, 'delete'])->name('visitors.delete');
+Route::get('/visitors/{visitor}/restore', [VisitorController::class, 'restore'])->name('visitors.restore');
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');

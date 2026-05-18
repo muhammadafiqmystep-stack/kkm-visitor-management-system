@@ -69,4 +69,13 @@ class VisitorController extends Controller
         auth()->user()->notify(new \App\Notifications\VisitorDeletedNotification());
         return redirect()->route('visitors.index');
     }
+
+    public function restore($visitor)
+    {
+        $visitor = \App\Models\Visitor::withTrashed()->find($visitor);
+        //restore visitor
+        $visitor->restore();
+
+        return redirect()->route('visitors.index');
+    }
 }

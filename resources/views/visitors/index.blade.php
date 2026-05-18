@@ -53,6 +53,7 @@
                                 <th>Email</th>
                                 <th>Created At</th>
                                 <th>Deleted At</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,6 +64,9 @@
                                     <td>{{ $deletedVisitor->email }}</td>
                                     <td>{{ $deletedVisitor->created_at->diffForHumans() }}</td>
                                     <td>{{ $deletedVisitor->deleted_at->diffForHumans() }}</td>
+                                    <td>
+                                        <a href="{{ route('visitors.restore', $deletedVisitor->id) }}" class="btn btn-success">Restore</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
