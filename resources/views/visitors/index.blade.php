@@ -40,6 +40,35 @@
                     </table>
                 </div>
             </div>
+            <br>
+            <div class="card">
+                <div class="card-header">{{ __('Visitor Soft Deleted Index') }}</div>
+
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Created At</th>
+                                <th>Deleted At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($deletedVisitors as $deletedVisitor)
+                                <tr>
+                                    <td>{{ $deletedVisitor->name }}</td>
+                                    <td>{{ $deletedVisitor->phone }}</td>
+                                    <td>{{ $deletedVisitor->email }}</td>
+                                    <td>{{ $deletedVisitor->created_at->diffForHumans() }}</td>
+                                    <td>{{ $deletedVisitor->deleted_at->diffForHumans() }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
