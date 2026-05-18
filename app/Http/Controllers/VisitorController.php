@@ -72,7 +72,7 @@ class VisitorController extends Controller
 
     public function restore($visitor)
     {
-        $visitor = \App\Models\Visitor::withTrashed()->find($visitor);
+        $visitor = \App\Models\Visitor::onlyTrashed()->find($visitor);
         //restore visitor
         $visitor->restore();
 
