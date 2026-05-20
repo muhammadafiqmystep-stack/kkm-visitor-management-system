@@ -284,12 +284,16 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                                 </li>
+                                @can('index visitors')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('visitors.index') }}">{{ __('Visitors') }}</a>
                                 </li>
+                                @endcan
+                                @can ('create visitors')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('visitors.create') }}">{{ __('Visitor Create') }}</a>
                                 </li>
+                                @endcan
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a>
                                 </li>
