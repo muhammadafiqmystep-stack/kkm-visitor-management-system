@@ -26,6 +26,8 @@ class PermissionTableSeeder extends Seeder
             'delete visitors',
             //-- premission users name --//
             'index users',
+            'edit users',
+            'delete users',
             //-- permission blogs name --//
             'index blogs',
             'create blogs',

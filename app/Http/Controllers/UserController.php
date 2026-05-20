@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function __construct() 
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:index users', ['only'=>['index']]);
+        $this->middleware('permission:edit users', ['only'=>['edit','update']]);
+        $this->middleware('permission:delete users', ['only'=>['delete']]);
+    }
+
     public function index()
     {
         //query from table 'users' using model User

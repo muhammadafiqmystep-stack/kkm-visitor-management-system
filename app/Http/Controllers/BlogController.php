@@ -6,6 +6,15 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+    public function __construct() 
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:index blogs', ['only'=>['index']]);
+        $this->middleware('permission:create blogs', ['only'=>['create','store']]);
+        $this->middleware('permission:edit blogs', ['only'=>['edit','update']]);
+        $this->middleware('permission:delete blogs', ['only'=>['delete']]);
+    }
+
     public function index()
     {
         //query from table 'blogs' using model Blog
