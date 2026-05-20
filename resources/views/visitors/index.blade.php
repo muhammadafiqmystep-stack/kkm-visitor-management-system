@@ -27,12 +27,16 @@
                                     <td>{{ $visitor->created_at->diffForHumans() }}</td>
                                     <td>
                                         <a href="{{ route('visitors.show', $visitor->id) }}" class="btn btn-primary">Show</a>
+                                        @can('edit visitors')
                                         <a href="{{ route('visitors.edit', $visitor->id) }}" class="btn btn-warning">Edit</a>
+                                        @endcan
+                                        @can('soft delete visitors')
                                         <a 
                                             onclick="return confirm('Are you sure you want to delete this visitor?')"
                                             href="{{ route('visitors.delete', $visitor->id) }}" class="btn btn-danger">
                                             Delete
                                         </a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach
@@ -41,6 +45,7 @@
                 </div>
             </div>
             <br>
+            @can('restoreDelete visitors')
             <div class="card">
                 <div class="card-header">{{ __('Visitor Soft Deleted Index') }}</div>
 
@@ -78,6 +83,7 @@
                     </table>
                 </div>
             </div>
+            @endcan
         </div>
     </div>
 </div>

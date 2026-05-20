@@ -13,7 +13,8 @@ class VisitorController extends Controller
         $this->middleware('permission:index visitors', ['only'=>['index']]);
         $this->middleware('permission:create visitors', ['only'=>['create','store']]);
         $this->middleware('permission:edit visitors', ['only'=>['edit','update']]);
-        $this->middleware('permission:delete visitors', ['only'=>['delete']]);
+        $this->middleware('permission:soft delete visitors', ['only'=>['delete']]);
+        $this->middleware('permission:restoreDelete visitors', ['only'=>['restore', 'forceDelete']]);
     }
 
     public function index()
