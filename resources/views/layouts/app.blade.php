@@ -279,8 +279,8 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
-                        @auth
                         <div class="collapse navbar-collapse app-nav-collapse" id="navbarSupportedContent">
+                            @auth
                             <ul class="navbar-nav me-auto mb-2 mb-md-0">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
@@ -314,6 +314,7 @@
                                 </li>
                                 @endcan
                             </ul>
+                            @endauth
 
                             <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                                 @guest
@@ -382,7 +383,6 @@
                                 @endguest
                             </ul>
                         </div>
-                        @endauth
                     </div>
                 </nav>
             </header>
