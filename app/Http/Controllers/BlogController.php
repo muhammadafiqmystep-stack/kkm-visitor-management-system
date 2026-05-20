@@ -84,7 +84,7 @@ class BlogController extends Controller
         $pdf = Pdf::loadView('blogs.pdf', compact('blog'));
         $pdf->setPaper('a4', 'potrait');
         //password
-        $pdf->setEncryption("12345","56789");
+        //$pdf->setEncryption("12345","56789");
         //$pdf->setEncryption("userPassword","adminPassword");
 
         return $pdf->download('blog-'.$blog->id.'-pass.pdf');
