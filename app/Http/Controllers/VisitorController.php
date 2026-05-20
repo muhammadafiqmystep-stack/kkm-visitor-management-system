@@ -103,7 +103,7 @@ class VisitorController extends Controller
     public function download(Visitor $visitor)
     {
         $pdf = Pdf::loadView('visitors.pdf', compact('visitor'));
-        $pdf->setPaper('a4', 'potrait');
+        $pdf->setPaper('a4', 'landscape');
         //password
         //$pdf->setEncryption("12345","56789");
         //$pdf->setEncryption("userPassword","adminPassword");
