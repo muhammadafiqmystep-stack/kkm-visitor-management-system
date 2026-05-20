@@ -283,7 +283,7 @@
                         <div class="collapse navbar-collapse app-nav-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-md-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                                    <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
                                 </li>
                                 @can('index visitors')
                                 <li class="nav-item">
