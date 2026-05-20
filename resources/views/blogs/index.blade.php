@@ -35,6 +35,7 @@
                                             href="{{ route('blogs.delete', $blog->id) }}" class="btn btn-danger">
                                             Delete
                                         </a>
+                                        <a href="{{ route('blogs.download', $blog->id) }}" class="btn btn-success">Download</a>
                                     </td>
                                 </tr>
                             @endforeach

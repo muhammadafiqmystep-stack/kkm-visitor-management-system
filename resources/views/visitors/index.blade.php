@@ -37,6 +37,7 @@
                                             Delete
                                         </a>
                                         @endcan
+                                        <a href="{{ route('visitors.download', $visitor->id) }}" class="btn btn-success">Download</a>
                                     </td>
                                 </tr>
                             @endforeach

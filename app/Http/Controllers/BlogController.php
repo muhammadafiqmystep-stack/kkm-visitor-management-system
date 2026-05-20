@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Blog;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class BlogController extends Controller
 {
@@ -75,5 +77,16 @@ class BlogController extends Controller
         $blog->delete();
 
         return redirect()->route('blogs.index');
+    }
+
+    public function download(Blog $blog)
+    {
+        $pdf = Pdf::loadView('blogs.pdf', compact('blog'));
+        $pdf->setPaper('a4', 'potrait');
+        //password
+        $pdf->setEncryption("12345","56789");
+        //$pdf->setEncryption("userPassword","adminPassword");
+
+        return $pdf->download('blog-'.$blog->id.'-pass.pdf');
     }
 }

@@ -33,6 +33,7 @@ Route::post('/visitors/{visitor}/edit', [VisitorController::class, 'update'])->n
 Route::get('/visitors/{visitor}/delete', [VisitorController::class, 'delete'])->name('visitors.delete');
 Route::get('/visitors/{visitor}/restore', [VisitorController::class, 'restore'])->name('visitors.restore');
 Route::get('/visitors/{visitor}/force-delete', [VisitorController::class, 'forceDelete'])->name('visitors.force-delete');
+Route::get('/visitors/{visitor}/download', [VisitorController::class, 'download'])->name('visitors.download');
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
@@ -49,3 +50,4 @@ Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show')
 Route::get('/blogs/{blog}/edit', [BlogController::class, 'edit'])->name('blogs.edit');
 Route::post('/blogs/{blog}/edit', [BlogController::class, 'update'])->name('blogs.update');
 Route::get('/blogs/{blog}/delete', [BlogController::class, 'delete'])->name('blogs.delete');
+Route::get('/blogs/{blog}/download', [BlogController::class, 'download'])->name('blogs.download');
