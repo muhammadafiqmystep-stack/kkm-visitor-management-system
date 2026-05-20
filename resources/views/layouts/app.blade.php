@@ -279,6 +279,7 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
+                        @auth
                         <div class="collapse navbar-collapse app-nav-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-md-0">
                                 <li class="nav-item">
@@ -375,6 +376,7 @@
                                 @endguest
                             </ul>
                         </div>
+                        @endauth
                     </div>
                 </nav>
             </header>
