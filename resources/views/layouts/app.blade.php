@@ -295,18 +295,24 @@
                                     <a class="nav-link" href="{{ route('visitors.create') }}">{{ __('Visitor Create') }}</a>
                                 </li>
                                 @endcan
+                                @can('index users')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a>
                                 </li>
+                                @endcan
                                 <li class="nav-item d-none">
                                     <a class="nav-link" href="{{ route('users.create') }}">{{ __('User Create') }}</a>
                                 </li>
+                                @can('index blogs')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('blogs.index') }}">{{ __('Blogs') }}</a>
                                 </li>
+                                @endcan
+                                @can('create blogs')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('blogs.create') }}">{{ __('Blog Create') }}</a>
                                 </li>
+                                @endcan
                             </ul>
 
                             <ul class="navbar-nav ms-auto mb-2 mb-md-0">
@@ -323,8 +329,8 @@
                                         </li>
                                     @endif
                                 @else
-                                    <li class="nav-item dropdown me-md-2">
-                                        <a class="nav-link position-relative py-2" href="#" id="navbarNotificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="{{ __('Notifications') }}">
+                                    <li class="nav-item dropdown me-md-2 d-flex align-items-center">
+                                        <a class="nav-link position-relative py-2 d-flex align-items-center justify-content-center" href="#" id="navbarNotificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="{{ __('Notifications') }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16" aria-hidden="true">
                                                 <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
                                             </svg>

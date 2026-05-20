@@ -16,7 +16,7 @@ class PermissionTableSeeder extends Seeder
     public function run(): void
     {
         $role = Role::firstOrCreate(
-            ['name' => 'admin', 'guard_name' => 'web']
+            ['name' => 'admin', 'guard_name' => 'web'],
         );
 
         $permissionNames = [
@@ -24,6 +24,13 @@ class PermissionTableSeeder extends Seeder
             'create visitors',
             'edit visitors',
             'delete visitors',
+            //-- premission users name --//
+            'index users',
+            //-- permission blogs name --//
+            'index blogs',
+            'create blogs',
+            'edit blogs',
+            'delete blogs',
         ];
 
         $permissions = collect($permissionNames)->map(
