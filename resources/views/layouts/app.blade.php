@@ -363,7 +363,7 @@
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }}
                                             <div class="small text-muted">
-                                                {{ Auth::user()->lastLoginAt()->format('H:i:s') }} +8 hours
+                                                {{ Auth::user()->lastLoginAt()->timezone('Asia/Kuala_Lumpur')->format('H:i:s') }}
                                             </div>
                                         </a>
 
