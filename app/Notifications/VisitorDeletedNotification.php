@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class VisitorDeletedNotification extends Notification
+class VisitorDeletedNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -26,7 +26,7 @@ class VisitorDeletedNotification extends Notification
      */
     public function via(object $notifiable): array
     {
-        return ['database'];
+        return ['database','mail'];
     }
 
     /**
@@ -35,7 +35,7 @@ class VisitorDeletedNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->line('The introduction to the notification.')
+            ->line('You have deleted a visitor.')
             ->action('Notification Action', url('/'))
             ->line('Thank you for using our application!');
     }

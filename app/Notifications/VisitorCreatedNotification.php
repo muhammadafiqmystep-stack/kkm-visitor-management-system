@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class VisitorCreatedNotification extends Notification
+class VisitorCreatedNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -27,7 +27,7 @@ class VisitorCreatedNotification extends Notification
     public function via(object $notifiable): array
     {
         //return ['mail'];
-        return ['database'];
+        return ['database','mail'];
     }
 
     /**
@@ -36,7 +36,7 @@ class VisitorCreatedNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->line('The introduction to the notification.')
+            ->line('Thank you for creating a new visitor.')
             ->action('Notification Action', url('/'))
             ->line('Thank you for using our application!');
     }
