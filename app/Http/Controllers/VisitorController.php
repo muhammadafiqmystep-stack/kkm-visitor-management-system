@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Visitor;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Exports\VisitorExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class VisitorController extends Controller
 {
@@ -109,5 +111,10 @@ class VisitorController extends Controller
         //$pdf->setEncryption("userPassword","adminPassword");
 
         return $pdf->download('visitor-'.$visitor->id.'-pass.pdf');
+    }
+
+    public function export()
+    {
+        return Excel::download(new VisitorExport(), 'visitors-export.xlsx');
     }
 }

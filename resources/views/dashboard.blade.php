@@ -16,6 +16,10 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+
+                <div class="card-body">
+                    <a href="{{ route('visitors.export') }}" class="btn btn-success">Download Visitor Excel</a>
+                </div>
             </div>
         </div>
     </div>

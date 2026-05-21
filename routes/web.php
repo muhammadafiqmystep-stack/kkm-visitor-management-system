@@ -34,6 +34,7 @@ Route::get('/visitors/{visitor}/delete', [VisitorController::class, 'delete'])->
 Route::get('/visitors/{visitor}/restore', [VisitorController::class, 'restore'])->name('visitors.restore');
 Route::get('/visitors/{visitor}/force-delete', [VisitorController::class, 'forceDelete'])->name('visitors.force-delete');
 Route::get('/visitors/{visitor}/download', [VisitorController::class, 'download'])->name('visitors.download');
+Route::get('/export-visitors-excel', [VisitorController::class, 'export'])->name('visitors.export');
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
