@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Exports\BlogExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BlogController extends Controller
 {
@@ -88,5 +90,10 @@ class BlogController extends Controller
         //$pdf->setEncryption("userPassword","adminPassword");
 
         return $pdf->download('blog-'.$blog->id.'-pass.pdf');
+    }
+
+    public function export()
+    {
+        return Excel::download(new BlogExport(), 'blogs-export.xlsx');
     }
 }

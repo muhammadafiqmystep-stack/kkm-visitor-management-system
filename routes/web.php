@@ -52,3 +52,4 @@ Route::get('/blogs/{blog}/edit', [BlogController::class, 'edit'])->name('blogs.e
 Route::post('/blogs/{blog}/edit', [BlogController::class, 'update'])->name('blogs.update');
 Route::get('/blogs/{blog}/delete', [BlogController::class, 'delete'])->name('blogs.delete');
 Route::get('/blogs/{blog}/download', [BlogController::class, 'download'])->name('blogs.download');
+Route::get('/export-blogs-excel', [BlogController::class, 'export'])->name('blogs.export');

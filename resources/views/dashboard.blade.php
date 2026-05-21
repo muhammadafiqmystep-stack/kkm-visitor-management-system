@@ -20,7 +20,11 @@
                 <div class="card-body">
                     <a
                         onclick="return confirm('Are you sure you want to export visitors?')"
-                        href="{{ route('visitors.export') }}" class="btn btn-success">Export Visitors Excel
+                        href="{{ route('visitors.export') }}" class="btn btn-outline-primary">Export Visitors Excel
+                    </a>
+                    <a
+                        onclick="return confirm('Are you sure you want to export blogs?')"
+                        href="{{ route('blogs.export') }}" class="btn btn-outline-secondary">Export Blogs Excel
                     </a>
                 </div>
             </div>
