@@ -37,7 +37,12 @@
                                             Delete
                                         </a>
                                         @endcan
-                                        <a href="{{ route('visitors.download', $visitor->id) }}" class="btn btn-success">Download</a>
+                                        <a 
+                                            onclick="return confirm('Are you sure you want to download this visitor?')"
+                                            href="{{ route('visitors.download', $visitor->id) }}" class="btn btn-success">
+                                            Download
+                                        </a>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

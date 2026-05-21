@@ -18,7 +18,10 @@
                 </div>
 
                 <div class="card-body">
-                    <a href="{{ route('visitors.export') }}" class="btn btn-success">Download Visitor Excel</a>
+                    <a
+                        onclick="return confirm('Are you sure you want to export visitors?')"
+                        href="{{ route('visitors.export') }}" class="btn btn-success">Export Visitors Excel
+                    </a>
                 </div>
             </div>
         </div>
