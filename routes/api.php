@@ -14,14 +14,18 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/login', [APILoginController::class, 'login']);
 
-Route::get('/blogs', [APIBlogController::class, 'index'])->middleware('auth:sanctum');
-Route::get('/blogs/{blog}', [APIBlogController::class, 'show']);
-Route::get('/blogs/{blog}/delete', [APIBlogController::class, 'delete']);
-//blogs store
-//blogs update
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/blogs', [APIBlogController::class, 'index']);
+    Route::get('/blogs/{blog}', [APIBlogController::class, 'show']);
+    Route::get('/blogs/{blog}/delete', [APIBlogController::class, 'delete']);
+    Route::post('/blogs', [APIBlogController::class, 'store']);
+    Route::post('/blogs/{blog}', [APIBlogController::class, 'edit']);
 
-Route::get('/visitors', [APIVisitorController::class, 'index']);
-Route::get('/visitors/{visitor}', [APIVisitorController::class, 'show']);
-Route::get('/visitors/{visitor}/delete', [APIVisitorController::class, 'delete']);
+    Route::get('/visitors', [APIVisitorController::class, 'index']);
+    Route::get('/visitors/{visitor}', [APIVisitorController::class, 'show']);
+    Route::get('/visitors/{visitor}/delete', [APIVisitorController::class, 'delete']);
+    Route::post('/visitors', [APIVisitorController::class, 'store']);
+    Route::post('/visitors/{visitor}', [APIVisitorController::class, 'edit']);
 //visitors store
 //visitors update
+});

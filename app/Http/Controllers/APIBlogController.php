@@ -32,4 +32,31 @@ class APIBlogController extends Controller
             'data' => $blog
         ]);
     }
+
+    public function store(Request $request)
+    {
+        $blog = new Blog();
+        $blog->title = $request->title;
+        $blog->description = $request->description;
+        $blog->author = $request->author;
+        $blog->genre = $request->genre;
+        $blog->save();
+        return response()->json([
+            'message' => 'Successfully store blog',
+            'data' => $blog
+        ]);
+    }
+
+    public function edit(Blog $blog, Request $request)
+    {
+        $blog->title = $request->title;
+        $blog->description = $request->description;
+        $blog->author = $request->author;
+        $blog->genre = $request->genre;
+        $blog->save();
+        return response()->json([
+            'message' => 'Successfully edit blog',
+            'data' => $blog
+        ]);
+    }
 }
