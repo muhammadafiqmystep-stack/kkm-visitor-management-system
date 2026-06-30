@@ -26,6 +26,4 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/visitors/{visitor}/delete', [APIVisitorController::class, 'delete']);
     Route::post('/visitors', [APIVisitorController::class, 'store']);
     Route::post('/visitors/{visitor}', [APIVisitorController::class, 'edit']);
-//visitors store
-//visitors update
 });

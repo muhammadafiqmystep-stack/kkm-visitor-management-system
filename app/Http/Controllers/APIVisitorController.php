@@ -32,4 +32,29 @@ class APIVisitorController extends Controller
             'data' => $visitor
         ]);
     }
+
+    public function store(Request $request)
+    {
+        $visitor = new Visitor();
+        $visitor->name = $request->name;
+        $visitor->phone = $request->phone;
+        $visitor->email = $request->email;
+        $visitor->save();
+        return response()->json([
+            'message' => 'Successfully store visitor',
+            'data' => $visitor
+        ]);
+    }
+
+    public function edit(Visitor $visitor, Request $request)
+    {
+        $visitor->name = $request->name;
+        $visitor->phone = $request->phone;
+        $visitor->email = $request->email;
+        $visitor->save();
+        return response()->json([  
+            'message' => 'Successfully edit visitor',
+            'data' => $visitor
+        ]);
+    }
 }
