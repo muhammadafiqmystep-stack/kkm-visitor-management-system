@@ -5,12 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\APIBlogController;
 use App\Http\Controllers\APIVisitorController;
 use App\Http\Controllers\APILoginController;
+use App\Http\Controllers\APIRegisterController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-//register
+Route::post('/register', [APIRegisterController::class, 'register']);
 
 Route::post('/login', [APILoginController::class, 'login']);
 
